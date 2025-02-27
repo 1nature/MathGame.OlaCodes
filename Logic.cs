@@ -72,7 +72,7 @@
             for (int i = 0; i < numberOfRounds; i++)
             {
                 int firstNum = random.Next(1, 9);
-                int secondNum = random.Next(1, 19);
+                int secondNum = random.Next(1, 9);
 
                 if (firstNum > secondNum || firstNum == secondNum)
                 {
