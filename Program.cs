@@ -10,7 +10,8 @@ namespace MathGame.OlaCodes
             Interface.ShowOperationMenu();
             //Logic.Addition();
             //Logic.Multiplication();
-            Logic.Subtraction();
+            //Logic.Subtraction();
+            Logic.Division();
         }
     }
 }

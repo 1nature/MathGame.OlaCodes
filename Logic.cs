@@ -1,4 +1,7 @@
-﻿namespace MathGame.OlaCodes
+﻿using MathGame.OlaCodes;
+using static System.Formats.Asn1.AsnWriter;
+
+namespace MathGame.OlaCodes
 {
     internal class Logic
     {
@@ -28,6 +31,7 @@
                 else
                 {
                     Interface.ShowIncorrectAnswerMessage();
+                    score++;
                 }
 
             }
@@ -54,6 +58,7 @@
                 else
                 {
                     Interface.ShowIncorrectAnswerMessage();
+                    score++;
                 }
 
             }
@@ -74,26 +79,49 @@
                 int firstNum = random.Next(1, 9);
                 int secondNum = random.Next(1, 9);
 
-                if (firstNum > secondNum || firstNum == secondNum)
-                {
-                    Interface.ShowSubtractionMessage(firstNum, secondNum);
-                }
-                else if (secondNum > firstNum)
-                {
-                    Interface.ShowSubtractionMessage(secondNum, firstNum);
-                }
-
-                // should not need a condition showing which is greater btw firstNum & secondNum?
+                Interface.ShowSubtractionMessage(firstNum, secondNum);
                 int answer = Convert.ToInt32(Console.ReadLine());
 
-                if (firstNum > secondNum || firstNum == secondNum)
+                if (answer == firstNum - secondNum)
                 {
-                    if (answer == firstNum - secondNum)
+                    Interface.ShowCorrectAnswerMessage(answer);
+                    score++;
+                }
+                else
+                {
+                    Interface.ShowIncorrectAnswerMessage();
+                    score++;
+
+                }
+            }
+            Interface.ShowGameOverMessage(score, numberOfRounds);
+        }
+
+        public static void Division()
+        {
+            Random random = new Random();
+
+            int score = 0;
+
+            Interface.ShowPlayTimesMessage();
+            int numberOfRounds = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < numberOfRounds; i++)
+            {
+               
+                    int firstNum = random.Next(1, 99);
+                    int secondNum = random.Next(1, 99);
+
+                while (firstNum % secondNum == 0)
+                {
+                    Interface.ShowDivisionMessage(firstNum, secondNum);
+                    int answer = Convert.ToInt32(Console.ReadLine());
+
+                    if (answer == firstNum / secondNum)
                     {
                         Interface.ShowCorrectAnswerMessage(answer);
                         score++;
                     }
-
                     else
                     {
                         Interface.ShowIncorrectAnswerMessage();
@@ -101,21 +129,11 @@
 
                     }
                 }
-                else if (secondNum > firstNum)
-                {
-                    if (answer == secondNum - firstNum)
-                    {
-                        Interface.ShowCorrectAnswerMessage(answer);
-                        score++;
-                    }
-                    else 
-                    { Interface.ShowIncorrectAnswerMessage();
-                        score++;
-                    }
-                }
-                
             }
             Interface.ShowGameOverMessage(score, numberOfRounds);
         }
+
+        //Need to break this up into 2
+
     }
 }
