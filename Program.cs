@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace MathGame.OlaCodes
+﻿namespace MathGame.OlaCodes
 {
     internal class Program
     {
@@ -8,10 +6,10 @@ namespace MathGame.OlaCodes
         {
             Interface.WelcomeMessage();
             Interface.ShowOperationMenu();
-            //Logic.Addition();
-            //Logic.Multiplication();
-            //Logic.Subtraction();
-            Logic.Division();
+            Logic.PlayGames();
+
+            //quit game yet to be fixed
+            //incorporate AI?
         }
     }
 }
