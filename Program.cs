@@ -10,6 +10,8 @@
 
             //quit game yet to be fixed
             //incorporate AI?
+            //Other things like storing games
+            //Adopt .Net Maui
         }
     }
 }

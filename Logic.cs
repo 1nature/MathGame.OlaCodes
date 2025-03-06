@@ -164,10 +164,13 @@ namespace MathGame.OlaCodes
                 case "D":
                     Logic.Division();
                     break;
+                case "E":
+                    break;
                 default:
                     Interface.ShowWrongInputMessage();
                     break;
             }
+            Interface.QuitGameMessage(choice);
         }
 
     }

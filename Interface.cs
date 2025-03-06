@@ -71,6 +71,13 @@
             return selectedGame;
         }
 
+        public static void QuitGameMessage(string choice)
+        {
+            if (choice == "E")
+            {
+                Console.WriteLine("You quit");
+            }
+        }
 
     }
 }
