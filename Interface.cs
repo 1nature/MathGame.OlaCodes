@@ -19,6 +19,25 @@
                 "\nD = Division Game" +
                 "\nE = Quit");
         }
+
+        public static void ContinuePlaying()
+        {
+            Logic.GameOptions();
+            Console.WriteLine("Enter 'Y' to play another game or 'N' to quit");
+            string answer = Console.ReadLine().ToUpper();
+            while (answer == "Y")
+            {
+                Logic.GameOptions();
+            }
+
+            while (answer == "N" || answer != "Y")
+            {
+                Console.WriteLine("You decided to quit");
+                break;
+            }
+            
+        }
+
         public static void ShowPlayTimesMessage() 
         {
             Console.WriteLine("How many times do you want to play: ");
@@ -77,6 +96,15 @@
             {
                 Console.WriteLine("You quit");
             }
+        }
+
+        public static void ShowGamesHistory(List<string>history)
+        {
+            foreach (string game in history)
+            {
+                Console.WriteLine(game);
+            }
+            // List<string> gameHistory = new List<string>();
         }
 
     }

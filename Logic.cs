@@ -1,13 +1,12 @@
-﻿using MathGame.OlaCodes;
-using static System.Formats.Asn1.AsnWriter;
-
-namespace MathGame.OlaCodes
+﻿namespace MathGame.OlaCodes
 {
     internal class Logic
     {
-        public static void Addition()
+        public static List<string> Addition()
         {
             Random random = new Random();
+            List<string> gameHistory = new List<string>();
+            string gameName = "Addition";
 
             int score = 0;
 
@@ -32,15 +31,32 @@ namespace MathGame.OlaCodes
                 {
                     Interface.ShowIncorrectAnswerMessage();
                 }
-
             }
             Interface.ShowGameOverMessage(score, numberOfRounds);
+
+            gameHistory.Add($"{gameName} game: Played {numberOfRounds} times, " +
+                    $"Final score = {score}/{numberOfRounds}.");
+            
+
+            return gameHistory;
+
+            //foreach (string game in gameHistory)
+            //{
+            //    Console.WriteLine(game);
+            //}
+
+            
         }
 
-        public static void Multiplication()
+        public static List<string> Multiplication()
         {
             Random random = new Random();
             int score = 0;
+
+            List<string> gameHistory = new List<string>();
+            string gameName = "Multiplication";
+
+
             Interface.ShowPlayTimesMessage();
             int numberOfRounds = int.Parse(Console.ReadLine());
             for (int i = 0; i < numberOfRounds; i++)
@@ -61,11 +77,21 @@ namespace MathGame.OlaCodes
 
             }
             Interface.ShowGameOverMessage(score, numberOfRounds);
+
+            gameHistory.Add($"{gameName} game: Played {numberOfRounds} times, " +
+                   $"Final score = {score}/{numberOfRounds}.");
+
+
+            return gameHistory;
+            //Each game has to RETURN something, maybe a string
+            //That will be used to form somethi
         }
 
-        public static void Subtraction()
+        public static List<string> Subtraction()
         {
             Random random = new Random();
+            List<string> gameHistory = new List<string>();
+            string gameName = "Subtraction";
 
             int score = 0;
 
@@ -91,11 +117,19 @@ namespace MathGame.OlaCodes
                 }
             }
             Interface.ShowGameOverMessage(score, numberOfRounds);
+
+            gameHistory.Add($"{gameName} game: Played {numberOfRounds} times, " +
+                  $"Final score = {score}/{numberOfRounds}.");
+
+
+            return gameHistory;
         }
 
-        public static void Division()
+        public static List<string> Division()
         {
             Random random = new Random();
+            List<string> gameHistory = new List<string>();
+            string gameName = "Division";
 
             int score = 0;
 
@@ -122,6 +156,11 @@ namespace MathGame.OlaCodes
 
             }
             Interface.ShowGameOverMessage(score, numberOfRounds);
+            gameHistory.Add($"{gameName} game: Played {numberOfRounds} times, " +
+                 $"Final score = {score}/{numberOfRounds}.");
+
+
+            return gameHistory;
         }
 
         public static int[] GetDivisionNumbers()
@@ -146,23 +185,28 @@ namespace MathGame.OlaCodes
             return result;
         }
 
-        public static void PlayGames()
+        public static void GameOptions()
         {
             string choice = Interface.SelectGameOption();
+            List<string> storeGames = new List<string>();
 
             switch (choice)
             {
                 case "A":
-                    Logic.Addition();
+                    storeGames = Addition();
+                    Interface.ShowGamesHistory(storeGames);
                     break;
                 case "B":
-                    Logic.Subtraction();
+                    storeGames = Subtraction();
+                    Interface.ShowGamesHistory(storeGames);
                     break;
                 case "C":
-                    Logic.Multiplication();
+                    storeGames = Multiplication();
+                    Interface.ShowGamesHistory(storeGames);
                     break;
                 case "D":
-                    Logic.Division();
+                    storeGames = Division();
+                    Interface.ShowGamesHistory(storeGames);
                     break;
                 case "E":
                     break;

@@ -6,9 +6,12 @@
         {
             Interface.WelcomeMessage();
             Interface.ShowOperationMenu();
-            Logic.PlayGames();
+            Interface.ContinuePlaying();
+            // Logic.GameOptions();
 
-            //quit game yet to be fixed
+
+            //Record previous games in a List
+            //It should be an option in the menu for the user to view previous games history
             //incorporate AI?
             //Other things like storing games
             //Adopt .Net Maui
