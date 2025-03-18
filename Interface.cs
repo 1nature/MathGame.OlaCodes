@@ -12,7 +12,7 @@
 
         public static void ShowOperationMenu()
         {
-            Console.WriteLine("Please select an operation or quit the game: \n" +
+            Console.WriteLine("Please select an operation or exit the game: \n" +
                 "\nA = Addition Game," +
                 "\nB = Subtraction Game," +
                 "\nC = Multiplication Game," +
