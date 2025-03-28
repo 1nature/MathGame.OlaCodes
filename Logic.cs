@@ -185,7 +185,7 @@
             return result;
         }
 
-        public static void GameOptions()
+        public static string GameOptions()
         {
             string choice = Interface.SelectGameOption();
             List<string> storeGames = new List<string>();
@@ -215,7 +215,9 @@
                     break;
             }
             Interface.QuitGameMessage(choice);
+            return choice;
         }
+        
 
     }
 }

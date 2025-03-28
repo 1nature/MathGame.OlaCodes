@@ -22,7 +22,9 @@
 
         public static void ContinuePlaying()
         {
-            Logic.GameOptions();
+            string option = Logic.GameOptions();
+            
+
             Console.WriteLine("Enter 'Y' to play another game or 'N' to quit");
             string answer = Console.ReadLine().ToUpper();
             while (answer == "Y")
@@ -35,6 +37,7 @@
                 Console.WriteLine("You decided to quit");
                 break;
             }
+
             
         }
 
