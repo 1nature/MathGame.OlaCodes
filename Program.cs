@@ -7,6 +7,7 @@
             Interface.WelcomeMessage();
             Interface.ShowOperationMenu();
             Interface.ContinuePlaying();
+            Console.WriteLine("Is it Finished");
         }
     }
 }
